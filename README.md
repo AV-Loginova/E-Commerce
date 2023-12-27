@@ -6,9 +6,13 @@ The main page was imposed.
 1. Navigation Bar
 Is completely non-usable, however, i've learnt how to use Bootstrap icons.
 <img width="1439" alt="NavBar" src="https://github.com/AV-Loginova/E-Commerce/assets/129111624/d979a435-32c7-4d50-986f-8aebe04fc40f">
+
+
 2. Sub Navigation
 All the categories are in the array of objects(name, chosen, color).
 <img width="1440" alt="SubNav" src="https://github.com/AV-Loginova/E-Commerce/assets/129111624/2758c712-2283-4177-a623-2fc114a17309">
-3. To impose cards and fill them with the information was used fakeStoreApi.
+
+
+3. To impose cards and fill them with the information was used fakeStoreApi.\n
 <img width="374" alt="Card" src="https://github.com/AV-Loginova/E-Commerce/assets/129111624/1e463a83-a7d2-4eb3-96ee-87db092749e4">
 
