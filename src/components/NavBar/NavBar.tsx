@@ -4,11 +4,13 @@ export default function NavBar() {
   return (
     <nav className="w-[100vw] h-[80px] bg-[#ededed]">
       <ul className="list-none flex h-[80px] justify-between items-center gap-[10px]">
-        <li className="flex items-end flex-1">
+        <li className="flex items-end flex-1 ml-[10px]">
           <Icon.LifePreserver size={40} color="#242424" />
-          <strong className="text-4xl text-[#242424]">LifePreserver</strong>
+          <strong className="text-3xl text-[#242424] lg:text-4xl">
+            LifePreserver
+          </strong>
         </li>
-        <li className="flex-1">
+        <li className="flex-1 hidden sm:block">
           <input
             placeholder="Search..."
             type="search"

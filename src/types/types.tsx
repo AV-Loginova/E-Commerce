@@ -10,3 +10,11 @@ export interface Data {
     count: number;
   };
 }
+
+export interface Categories {
+  index: number;
+  name: string;
+  chosen: boolean;
+  color: string;
+  category: string;
+}

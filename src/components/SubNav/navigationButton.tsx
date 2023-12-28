@@ -1,17 +1,23 @@
+import { Categories } from "../../types/types";
+
 type Props = {
-  text: string;
-  color: string;
-  chosen: boolean;
+  props: Categories;
+  onClick: any;
 };
 
-export default function NavigationButton({ text, color, chosen }: Props) {
+export default function NavigationButton({ props, onClick }: Props) {
+  const handleClick = (event: any) => {
+    onClick(event.target.id);
+  };
   return (
     <button
-      className={`font-bold px-[50px] hover:text-xl transition-all ${color} ${
-        chosen ? "text-xl " : null
-      }`}
+      id={props.category}
+      onClick={handleClick}
+      className={`font-bold px-[20px] hover:text-xl transition-all ${
+        props.color
+      } ${props.chosen ? "text-xl" : null}`}
     >
-      {text}
+      {props.name}
     </button>
   );
 }

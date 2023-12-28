@@ -1,34 +1,29 @@
 import NavigationButton from "./navigationButton";
-
-const categories = [
-  {
-    name: "MEN",
-    chosen: false,
-    color: "text-black",
-  },
-  {
-    name: "WOMEN",
-    chosen: true,
-    color: "text-black",
-  },
-  {
-    name: "SALE",
-    chosen: false,
-    color: "text-red-400",
-  },
-];
+import { categories } from "../../data/data";
+import { useState } from "react";
+import Catalogue from "../Catalogue/Catalogue";
 
 export default function SubNav() {
+  const [category, setCategory] = useState();
+
+  const handleClick = (e: React.SetStateAction<undefined>) => {
+    setCategory(e);
+  };
   return (
-    <div className="flex ml-[30px] gap-[10px] py-[20px] justify-center h-[60px] mb-[10px]">
-      {categories.map((category) => (
-        <NavigationButton
-          key={category.name}
-          text={category.name}
-          color={category.color}
-          chosen={category.chosen}
-        />
-      ))}
-    </div>
+    <>
+      <div className="flex ml-[30px] gap-[10px] py-[10px] justify-center h-[60px] mb-[10px] w-(100vw)">
+        {/* <p>{index}</p> */}
+        {categories.map((category) => {
+          return (
+            <NavigationButton
+              onClick={handleClick}
+              props={category}
+              key={category.index}
+            />
+          );
+        })}
+      </div>
+      <Catalogue getCategory={category} />
+    </>
   );
 }
