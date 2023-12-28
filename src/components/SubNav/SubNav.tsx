@@ -12,7 +12,6 @@ export default function SubNav() {
   return (
     <>
       <div className="flex ml-[30px] gap-[10px] py-[10px] justify-center h-[60px] mb-[10px] w-(100vw)">
-        {/* <p>{index}</p> */}
         {categories.map((category) => {
           return (
             <NavigationButton

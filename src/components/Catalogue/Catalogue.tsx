@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./card";
 import { Data } from "../../types/types";
 import GoodInfo from "./goodInfo";
+import { categories } from "../../data/data";
 
 export default function Catalogue({ getCategory }: any) {
   const [data, setData] = useState<Data[]>([]);
@@ -16,23 +17,24 @@ export default function Catalogue({ getCategory }: any) {
     fetchData();
   }, []);
   const handleClick = (e: any) => {
-    console.log(e);
     setElement(e);
   };
-
-  if (element !== "") {
-  }
+  const handleDelete = () => {
+    setElement("");
+  };
   return (
-    <div className="flex flex-wrap gap-[20px] mx-[20px] justify-center">
+    <div className="flex flex-wrap gap-[20px] mx-[20px] justify-center mb-[20px]">
       {element !== "" ? (
-        <GoodInfo props={data[Number(element)]} />
+        <GoodInfo props={data[Number(element)]} onClick={handleDelete} />
       ) : (
         data.map((good, index) => {
           if (good.category == getCategory) {
+            categories.map((category) => {
+              category.chosen = false;
+            });
             return (
               <Card
                 index={index}
-                id={good.id}
                 title={good.title}
                 price={good.price}
                 key={good.id}
