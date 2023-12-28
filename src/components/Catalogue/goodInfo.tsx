@@ -16,7 +16,6 @@ export default function GoodInfo({ props }: Props) {
     }
     return arr;
   };
-  //   addStar(props?.rating.rate);
   return (
     <section className="flex flex-col lg:flex-row gap-[5vw] w-[70%] justify-around mt-[2vh] pb-[20px]">
       <div>
