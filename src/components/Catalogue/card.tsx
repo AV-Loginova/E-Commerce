@@ -7,18 +7,18 @@ type Props = {
 };
 
 export default function Card({ title, price, image, index, onClick }: Props) {
-  const handleClick = (event: any) => {
-    onClick(event.target.id);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    onClick(event.currentTarget.id);
   };
   return (
-    <div className="w-[250px] rounded-[10px] flex flex-col items-center p-[10px] basis-1/4 bg-[#242424]">
+    <div className="w-[250px] rounded-[10px] flex flex-col items-center p-[10px] basis-1/5 bg-[#242424]">
       <div className="w-[180px] flex justify-center bg-[white] rounded-[10px] my-[20px]">
         <img
           id={index}
           onClick={handleClick}
           src={image}
           alt={title}
-          className="h-[150px] my-[20px] min-w-[130px]"
+          className="h-[150px] my-[20px] min-w-[130px] p-[10px]"
         />
       </div>
       <p className="flex-1 text-center text-sm text-white">{title}</p>

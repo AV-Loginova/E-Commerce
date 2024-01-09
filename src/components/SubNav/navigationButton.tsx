@@ -6,8 +6,8 @@ type Props = {
 };
 
 export default function NavigationButton({ props, onClick }: Props) {
-  const handleClick = (event: any) => {
-    onClick(event.target.id);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    onClick(event.currentTarget.id);
     props.chosen = true;
   };
   return (

@@ -21,3 +21,5 @@ export const categories = [
     category: "jewelery",
   },
 ];
+
+export const likes = [];
